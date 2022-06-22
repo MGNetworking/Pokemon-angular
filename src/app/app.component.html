@@ -6,7 +6,19 @@
     type="text"
 />
 
-<p ng *ngIf="pokemonSelected"> <img [src]="pokemonSelected?.picture" >
-Pokemon de type {{pokemonSelected?.types }} <br>
-Date de création de l'objet {{pokemonSelected?.created }}</p>
-<p ng *ngIf="!pokemonSelected"> not found </p>
+<p ng *ngIf="pokemonSelected"> 
+    <img [src]="pokemonSelected?.picture" >
+    Pokemon de type {{pokemonSelected?.types }} <br>
+    Date de création de l'objet {{pokemonSelected?.created }}
+</p>
+
+
+<p ng *ngIf="!pokemonSelected">
+    Votre recherche n'a pas abouti </p>
+
+
+<p *ngFor="let pokemon of pokemonListe" >
+    Nom : {{pokemon.name}}<br>
+    type : {{pokemon.types}}
+
+</p>
