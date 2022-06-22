@@ -2,10 +2,11 @@
 
 <input 
     #Myinput
-    (keyup)="selectionPokemon(Myinput.value)"
+    (keyup.enter)="selectionPokemon(Myinput.value)"
     type="text"
 />
 
-<p> <img [src]="pokemonSelected?.picture" >
-Pokemon de type {{pokemonSelected?.types }}</p>
-<p>Date de création de l'objet {{pokemonSelected?.created }}</p>
+<p ng *ngIf="pokemonSelected"> <img [src]="pokemonSelected?.picture" >
+Pokemon de type {{pokemonSelected?.types }} <br>
+Date de création de l'objet {{pokemonSelected?.created }}</p>
+<p ng *ngIf="!pokemonSelected"> not found </p>
