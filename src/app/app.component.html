@@ -1,10 +1,11 @@
 <h1>Sélection d'un pokémons</h1>
 
 <input 
-    type="number"
-    (click)="selectionPokemon($event)"
+    #Myinput
+    (keyup)="selectionPokemon(Myinput.value)"
+    type="text"
 />
 
-<p> <img [src]="pokemonListe[idSelected].picture" >
-    Pokemon de type {{pokemonListe[idSelected].types }}</p>
-<p>Date de création de l'objet {{pokemonListe[idSelected].created }}</p>
+<p> <img [src]="pokemonSelected?.picture" >
+Pokemon de type {{pokemonSelected?.types }}</p>
+<p>Date de création de l'objet {{pokemonSelected?.created }}</p>

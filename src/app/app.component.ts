@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
 
   idSelected: number  = 0;
 
+  pokemonSelected: Pokemon|undefined ;
+
   ngOnInit(): void {
     console.table(this.pokemonListe)
 
@@ -25,9 +27,9 @@ export class AppComponent implements OnInit {
 
   }
 
-  selectionPokemon(event: MouseEvent ) : void {
+  selectionPokemon(IdPokemon: string ) : void {
 
-    this.idSelected = + (event.target as HTMLInputElement).value
+    this.pokemonSelected = this.pokemonListe.find(pok=> pok.id == Number(IdPokemon));
 
   }
 
