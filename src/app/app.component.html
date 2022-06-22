@@ -1,24 +1,27 @@
-<h1>Sélection d'un pokémons</h1>
+<h1 class="center">Sélection d'un pokémons</h1>
 
-<input 
-    #Myinput
-    (keyup.enter)="selectionPokemon(Myinput.value)"
-    type="text"
-/>
+<div class="container"> 
+    <div  class="row">
 
-<p ng *ngIf="pokemonSelected"> 
-    <img [src]="pokemonSelected?.picture" >
-    Pokemon de type {{pokemonSelected?.types }} <br>
-    Date de création de l'objet {{pokemonSelected?.created }}
-</p>
+        <div *ngFor="let pokemon of pokemonListe"  class="col m4 s6">
+          <div class="card horizontal">
 
+              <div class="card-image">
+                <img [src]="pokemon.picture">
+              </div>
 
-<p ng *ngIf="!pokemonSelected">
-    Votre recherche n'a pas abouti </p>
+                <div class="card-stacked">
+                    <div class="card-content" > 
+                        <p>name {{pokemon.name}}</p>
+                        <p>HP {{pokemon.hp}}</p>
+                        <p>CP {{pokemon.cp}}</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
 
+    </div>
+</div>
 
-<p *ngFor="let pokemon of pokemonListe" >
-    Nom : {{pokemon.name}}<br>
-    type : {{pokemon.types}}
-
-</p>
+  
