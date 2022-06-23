@@ -16,6 +16,14 @@
                         <p>HP {{pokemon.hp}}</p>
                         <p>CP {{pokemon.cp}}</p>
                         <p>Date {{pokemon.created | date:"dd/mm/yyyy" }}</p>
+
+                        <span *ngFor="let type of pokemon.types" 
+                            class="{{ type | pokemonColorType}}">
+                            {{type}}
+
+                        </span>
+
+
                     </div>
                 </div>
             
