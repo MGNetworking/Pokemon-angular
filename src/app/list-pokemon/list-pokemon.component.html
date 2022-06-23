@@ -1,4 +1,6 @@
-<div class="container"> 
+<h1 class="center"> Liste des pokémons</h1>
+ 
+ <div class="container"> 
     <div  class="row">
 
         <div *ngFor="let pokemon of pokemonListe"  class="col m4 s6">
@@ -11,8 +13,6 @@
                 <div class="card-stacked">
                     <div class="card-content" > 
                         <p>name {{pokemon.name}}</p>
-                        <p>HP {{pokemon.hp}}</p>
-                        <p>CP {{pokemon.cp}}</p>
                         <p>Date {{pokemon.created | date:"dd/mm/yyyy" }}</p>
 
                         <span *ngFor="let type of pokemon.types" 
