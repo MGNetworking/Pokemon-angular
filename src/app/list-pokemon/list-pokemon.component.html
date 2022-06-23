@@ -4,7 +4,10 @@
     <div  class="row">
 
         <div *ngFor="let pokemon of pokemonListe"  class="col m4 s6">
-            <div class="card horizontal" (click)="selectionPokemon(pokemon.id)" pokemonBorderCard="red">
+            <div class="card horizontal" 
+            (click)="selectionPokemon(pokemon.id)"  
+            (click)="getPokemon(pokemon)" 
+            pokemonBorderCard="red">
 
                 <div class="card-image">
                     <img [src]="pokemon.picture">
