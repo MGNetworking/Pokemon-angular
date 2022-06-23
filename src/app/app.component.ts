@@ -20,9 +20,10 @@ export class AppComponent implements OnInit {
 
   }
 
-  selectionPokemon(IdPokemon: string ) : void {
+  selectionPokemon(IdPokemon: number ) : void {
 
-    this.pokemonSelected = this.pokemonListe.find(pok=> pok.id == Number(IdPokemon));
+    this.pokemonSelected = this.pokemonListe.find(pok=> pok.id == IdPokemon);
+    console.log(`Le pokémon sélectionner : ${this.pokemonSelected}`)
 
   }
 
