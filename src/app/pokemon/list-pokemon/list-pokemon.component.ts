@@ -23,6 +23,8 @@ export class ListPokemonComponent implements OnInit {
   ngOnInit(): void {
     this.pokemonListe = this.pokService.getListPokemon();
     console.table(this.pokemonListe)
+
+    this.pokService.getPokemonListType();
   }
 
   public selectionPokemon(IdPokemon: number ) : void {

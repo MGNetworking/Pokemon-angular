@@ -16,7 +16,31 @@ export class PokemonService {
     return POKEMONS.find(pk => pk.id == IdPokemon )
   }
 
-  //getPokemonListType(): string[]{
-  //}
+  /**
+   * 
+   * @returns La list de tout les types de pokemon
+   */
+  getPokemonListType(): string[]{
 
-}
+    let type: string[] = [];
+
+    POKEMONS.forEach(function getType(pok){
+
+        // get chaque type 
+        for(let arg of pok.types){
+          // -1 si existe pas  
+          if (type.indexOf(arg) == -1){
+            type.push(arg.toString());
+          }
+
+        }
+      
+    })
+    
+    console.log("Liste de tous les types des pokemons")
+    console.table(type)
+  
+    return type;
+  }
+
+};
