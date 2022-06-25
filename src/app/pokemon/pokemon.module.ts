@@ -5,6 +5,7 @@ import { PokemonColorTypePipe } from './pokemon-color-type.pipe';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 const pokemanRouter: Routes = [
@@ -23,6 +24,7 @@ const pokemanRouter: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(pokemanRouter)
   ]
 })
