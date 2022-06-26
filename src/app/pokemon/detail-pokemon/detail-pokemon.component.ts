@@ -42,4 +42,13 @@ export class DetailPokemonComponent implements OnInit {
     this.router.navigate(['/pokemon-list'])
   }
 
+
+  /**
+   * Aller vers l'éditionn d'un pokemon
+   * @param pokemon 
+   */
+  onEdited(pokemon: Pokemon){
+    this.router.navigate(["/pokemon-edite/", pokemon.id]);
+  }
+
 }
